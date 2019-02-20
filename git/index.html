@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/favicon.ico?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="优秀的人，不是不合群，而是他们合群的人里面没有你   git 命令行 目录 本地库  远程仓库  分支管理 3.1 创建与合并分支 3.2 解决冲突  标签管理 4.1 创建标签 4.2 操作标签    本地库 初始化一个 Git 版本库  git init  查看 Git 版本库状态  git status  查看被改动文件的详细信息  git diff &amp;lt;fileName&amp;gt;  将文">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git">
+<meta property="og:url" content="http://blog.varbug.top/git/index.html">
+<meta property="og:site_name" content="onlyep&#39;s blog">
+<meta property="og:description" content="优秀的人，不是不合群，而是他们合群的人里面没有你   git 命令行 目录 本地库  远程仓库  分支管理 3.1 创建与合并分支 3.2 解决冲突  标签管理 4.1 创建标签 4.2 操作标签    本地库 初始化一个 Git 版本库  git init  查看 Git 版本库状态  git status  查看被改动文件的详细信息  git diff &amp;lt;fileName&amp;gt;  将文">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://blog.varbug.top/upload_image/image.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/17583395/23828785/ddc1ef96-0717-11e7-8d47-26c0556dbdb5.jpeg">
+<meta property="og:updated_time" content="2019-02-18T03:29:58.981Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git">
+<meta name="twitter:description" content="优秀的人，不是不合群，而是他们合群的人里面没有你   git 命令行 目录 本地库  远程仓库  分支管理 3.1 创建与合并分支 3.2 解决冲突  标签管理 4.1 创建标签 4.2 操作标签    本地库 初始化一个 Git 版本库  git init  查看 Git 版本库状态  git status  查看被改动文件的详细信息  git diff &amp;lt;fileName&amp;gt;  将文">
+<meta name="twitter:image" content="http://blog.varbug.top/upload_image/image.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="http://blog.varbug.top/git/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <meta name="baidu-site-verification" content="hla3sERixE" />
+  <title>git | onlyep's blog</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">onlyep's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">onlyep</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-photo">
+    <a href="/photo" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-image"></i> <br />相册</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.varbug.top/git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="onlyep">
+      <meta itemprop="description" content="前端开发工作，三年工作经验，喜欢游戏、跑步健身、游泳，热爱前端开发工作，渴望找一个前端的妹子">
+      <meta itemprop="image" content="/upload_image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="onlyep's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">git
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-09 16:08:51" itemprop="dateCreated datePublished" datetime="2018-05-09T16:08:51+08:00">2018-05-09</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/教程/" itemprop="url" rel="index"><span itemprop="name">教程</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/git/" class="leancloud_visitors" data-flag-title="git">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center">优秀的人，不是不合群，而是他们合群的人里面没有你</blockquote>
+
+<p><img src="/upload_image/image.jpg" alt=""></p>
+<h1 id="git-命令行"><a href="#git-命令行" class="headerlink" title="git 命令行"></a>git 命令行</h1><p><img src="https://cloud.githubusercontent.com/assets/17583395/23828785/ddc1ef96-0717-11e7-8d47-26c0556dbdb5.jpeg" alt="git"></p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li><p><a href="##本地库">本地库</a></p>
+</li>
+<li><p><a href="#远程仓库">远程仓库</a></p>
+</li>
+<li><p><a href="#分支管理">分支管理</a></p>
+<p>3.1 <a href="#创建与合并分支">创建与合并分支</a></p>
+<p>3.2 <a href="#解决冲突">解决冲突</a></p>
+</li>
+<li><p><a href="#标签管理">标签管理</a></p>
+<p>4.1 <a href="#创建标签">创建标签</a></p>
+<p>4.2 <a href="#操作标签">操作标签</a></p>
+</li>
+</ol>
+<p><br></p>
+<h2 id="本地库"><a href="#本地库" class="headerlink" title="本地库"></a>本地库</h2><blockquote>
+<p>初始化一个 Git 版本库</p>
+</blockquote>
+<pre><code>git init
+</code></pre><blockquote>
+<p>查看 Git 版本库状态</p>
+</blockquote>
+<pre><code>git status
+</code></pre><blockquote>
+<p>查看被改动文件的详细信息</p>
+</blockquote>
+<pre><code>git diff &lt;fileName&gt;
+</code></pre><blockquote>
+<p>将文件加入缓存区</p>
+</blockquote>
+<pre><code>git add &lt;fileName&gt;
+</code></pre><blockquote>
+<p>提交到版本库</p>
+</blockquote>
+<pre><code>git commit -m &apos;message&apos;
+</code></pre><blockquote>
+<p>查看版本库操作日志</p>
+</blockquote>
+<pre><code>git log
+</code></pre><blockquote>
+<p>格式显示版本库操作日志</p>
+</blockquote>
+<pre><code>git log --pretty=oneline
+</code></pre><blockquote>
+<p>回滚（重置）版本库</p>
+</blockquote>
+<pre><code>git reset --hard &lt;版本号&gt;
+</code></pre><blockquote>
+<p><strong>工作区（Woking Directory）</strong></p>
+</blockquote>
+<pre><code>就是你在电脑里能看到的目录，或者说你当前 Git 版本库所在的文件夹
+</code></pre><blockquote>
+<p><strong>版本库（Repository）</strong></p>
+</blockquote>
+<p>  工作区有一个隐藏的目录 .git,这个不算工作区,而是 Git 的版本库<br>  Git的版本库里存了很多东西，其中最重要的就是称为 <code>stage</code>(或者叫 <code>index</code>) 的暂存区，<br>  还有 Git 为我们自动创建的第一个分支 <code>master</code>，以及指向 <code>master</code> 的一个指针叫做 <code>HEAD</code>。</p>
+<blockquote>
+<p>撤销工作区修改</p>
+</blockquote>
+<pre><code>git checkout -- &lt;fileName&gt;
+</code></pre><blockquote>
+<p>撤销暂存区修改</p>
+</blockquote>
+<pre><code>git reset HEAD &lt;fileName&gt;
+</code></pre><blockquote>
+<p>删除文件</p>
+</blockquote>
+<pre><code>git rm &lt;fileName&gt;
+</code></pre><p><br></p>
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><blockquote>
+<p>关联远程仓库</p>
+</blockquote>
+<pre><code>git remote add origin git@github.com:&lt;github地址&gt;/&lt;仓库名称&gt;.git
+</code></pre><blockquote>
+<p>将内容推送的远程库</p>
+</blockquote>
+<pre><code>git push -u origin &lt;分支&gt;
+git push origin &lt;分支&gt;
+</code></pre><p>  第一次推送 <code>master</code> 分支时，加上了 <code>-u</code> 参数，Git 不但会把本地的 <code>master</code> 分支内容推送到远程新的 <code>master</code> 分支，<br>  还会把本地的 <code>master</code> 分支和远程的 <code>master</code> 分支关联起来，在以后的推送或者拉取时就可以简化命令。</p>
+<blockquote>
+<p>克隆远程库</p>
+</blockquote>
+<pre><code>git clone git@github.com:&lt;github地址&gt;/&lt;仓库名称&gt;.git
+</code></pre><p><br></p>
+<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><h3 id="创建与合并分支"><a href="#创建与合并分支" class="headerlink" title="创建与合并分支"></a>创建与合并分支</h3><blockquote>
+<p>创建并切换分支</p>
+</blockquote>
+<pre><code>git checkout -b &lt;branchName&gt;
+</code></pre><blockquote>
+<p>查看分支</p>
+</blockquote>
+<pre><code>git branch
+</code></pre><blockquote>
+<p>切换分支</p>
+</blockquote>
+<pre><code>git checkout &lt;branchName&gt;
+</code></pre><blockquote>
+<p>合并分支</p>
+</blockquote>
+<pre><code>git merge &lt;branchName&gt;
+</code></pre><blockquote>
+<p>删除分支</p>
+</blockquote>
+<pre><code>git branch -d &lt;branchName&gt;
+</code></pre><h3 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h3><blockquote>
+<p>查看分支合并情况</p>
+</blockquote>
+<pre><code>git log --graph --pertty=oneline --abbrev-commit
+</code></pre><blockquote>
+<p>储藏</p>
+</blockquote>
+<pre><code>git stash
+</code></pre><blockquote>
+<p>查看储藏列表</p>
+</blockquote>
+<pre><code>git stash list
+</code></pre><blockquote>
+<p>应用储藏</p>
+</blockquote>
+<pre><code>git stash apply &lt;stash@{xx}&gt;
+</code></pre><blockquote>
+<p>删除储藏</p>
+</blockquote>
+<pre><code>git stash drop &lt;index | stash&gt;
+</code></pre><blockquote>
+<p>应用并删除储藏</p>
+</blockquote>
+<pre><code>git stash pop &lt;index | stash&gt;
+</code></pre><blockquote>
+<p>显示储藏信息</p>
+</blockquote>
+<pre><code>git stash show &lt;index | stash&gt;
+</code></pre><blockquote>
+<p>查看远程库信息</p>
+</blockquote>
+<pre><code>git remote
+</code></pre><blockquote>
+<p>查看远程库详细信息</p>
+</blockquote>
+<pre><code>git remote -v
+</code></pre><blockquote>
+<p>推送分支</p>
+</blockquote>
+<pre><code>git push origin &lt;branchName&gt;
+</code></pre><p><br></p>
+<h2 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h2><h3 id="创建标签"><a href="#创建标签" class="headerlink" title="创建标签"></a>创建标签</h3><blockquote>
+<p>创建标签</p>
+</blockquote>
+<pre><code>git tag &lt;name&gt;
+</code></pre><blockquote>
+<p>查看标签</p>
+</blockquote>
+<pre><code>git tag
+</code></pre><blockquote>
+<p>为commit id 添加标签</p>
+</blockquote>
+<pre><code>git tag &lt;commit id&gt;
+</code></pre><blockquote>
+<p>查看标签信息</p>
+</blockquote>
+<pre><code>git show &lt;tagName&gt;
+</code></pre><blockquote>
+<p>创建带有说明的标签</p>
+</blockquote>
+<pre><code>git tag -a &lt;tagName&gt; -m &apos;your message&apos;
+</code></pre><h3 id="操作标签"><a href="#操作标签" class="headerlink" title="操作标签"></a>操作标签</h3><blockquote>
+<p>删除标签</p>
+</blockquote>
+<pre><code>git tag -d &lt;tagName&gt;
+</code></pre><blockquote>
+<p>推送标签到远程</p>
+</blockquote>
+<pre><code>git push origin &lt;tagName&gt;
+</code></pre><blockquote>
+<p>推送所以标签</p>
+</blockquote>
+<pre><code>git push origin --tags
+</code></pre><blockquote>
+<p>删除远程标签</p>
+</blockquote>
+<p>  删除远程标签需，要先删除本地标签，然后再执行</p>
+<pre><code>git push origin :refs/tags/&lt;tagNameg&gt;
+</code></pre>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"># git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/如何判断用户浏览器以及一些前端常用的正则表单验证/" rel="prev" title="如何判断用户浏览器以及一些前端常用的正则表单验证">
+                如何判断用户浏览器以及一些前端常用的正则表单验证 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/upload_image/avatar.jpg"
+                alt="onlyep" />
+            
+              <p class="site-author-name" itemprop="name">onlyep</p>
+              <p class="site-description motion-element" itemprop="description">前端开发工作，三年工作经验，喜欢游戏、跑步健身、游泳，热爱前端开发工作，渴望找一个前端的妹子</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git-命令行"><span class="nav-number">1.</span> <span class="nav-text">git 命令行</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">1.1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地库"><span class="nav-number">1.2.</span> <span class="nav-text">本地库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#远程仓库"><span class="nav-number">1.3.</span> <span class="nav-text">远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支管理"><span class="nav-number">1.4.</span> <span class="nav-text">分支管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建与合并分支"><span class="nav-number">1.4.1.</span> <span class="nav-text">创建与合并分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决冲突"><span class="nav-number">1.4.2.</span> <span class="nav-text">解决冲突</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签管理"><span class="nav-number">1.5.</span> <span class="nav-text">标签管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建标签"><span class="nav-number">1.5.1.</span> <span class="nav-text">创建标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作标签"><span class="nav-number">1.5.2.</span> <span class="nav-text">操作标签</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+
+&copy; 
+<span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">onlyep</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("Tcnzdu7WLdG695c4hfmKGOHI-gzGzoHsz", "L84UVKMzELpotW9kByp0AIGF");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
