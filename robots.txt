@@ -8,5 +8,12 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
+Sitemap: http://www.varbug.top/sitemap.xml
+Sitemap: http://www.varbug.top/baidusitemap.xml
+
 Sitemap: http://varbug.top/sitemap.xml
 Sitemap: http://varbug.top/baidusitemap.xml
+
+Sitemap: http://blog.varbug.top/sitemap.xml
+Sitemap: http://blog.varbug.top/baidusitemap.xml
+
