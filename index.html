@@ -32,8 +32,6 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -46,6 +44,21 @@
 
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/favicon.ico?v=7.1.1" color="#222">
 
 
 
@@ -53,40 +66,15 @@
 
 
 
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=6.2.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=6.2.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=6.2.0">
-
-
-  <link rel="mask-icon" href="/images/favicon.ico?v=6.2.0" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    version: '6.2.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -124,19 +112,19 @@
 
 
 
-
+  
+  
   <link rel="canonical" href="http://blog.varbug.top/">
 
 
 
-<script type="text/javascript" id="page.configurations">
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: "",
   };
 </script>
 
-  <meta name="baidu-site-verification" content="hla3sERixE">
-  <title> onlyep's blog - 前端开发工作，三年工作经验，喜欢游戏、跑步健身、游泳，热爱前端开发工作，渴望找一个前端的妹子 </title>
+  <title>onlyep's blog</title>
   
 
 
@@ -144,7 +132,7 @@
 
 
 
-  <script type="text/javascript">
+  <script>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -157,30 +145,31 @@
 
 
 
+
+
+
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
@@ -199,7 +188,7 @@
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -213,6 +202,7 @@
       
         <h1 class="site-subtitle" itemprop="description">onlyep</h1>
       
+    
     
   </div>
 
@@ -236,24 +226,51 @@
         
           
           <li class="menu-item menu-item-home menu-item-active">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
   </li>
         
         
         
           
           <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
   </li>
         
         
         
           
           <li class="menu-item menu-item-photo">
-    <a href="/photo" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-image"></i> <br>相册</a>
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/photo" rel="section"><i class="menu-item-icon fa fa-fw fa-image"></i> <br>相册</a>
+
   </li>
 
       
@@ -323,9 +340,8 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Linux服务器所见所闻/" itemprop="url">
-                  Linux服务器所见所闻
-                </a>
+                
+                <a href="/Linux服务器所见所闻/" class="post-title-link" itemprop="url">Linux服务器所见所闻</a>
               
             
           </h2>
@@ -350,9 +366,13 @@
                 
               
 
-              <time title="创建时间：2019-05-19 11:29:33" itemprop="dateCreated datePublished" datetime="2019-05-19T11:29:33+08:00">2019-05-19</time>
+              <time title="创建时间：2019-05-19 11:29:33 / 修改时间：14:59:51" itemprop="dateCreated datePublished" datetime="2019-05-19T11:29:33+08:00">2019-05-19</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -360,20 +380,10 @@
 
           
             
+            
           
 
           
-          
-             <span id="/Linux服务器所见所闻/" class="leancloud_visitors" data-flag-title="Linux服务器所见所闻">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -396,19 +406,15 @@
 
       
         
-          
-          docker使用遇到的一些问题docker报错：Cannot connect to the Docker daemon. Is the docker daemon running on this host?docker这种报错一般情况都是docker未启动对于这种情况只用重启docker就行了：
-service docker restart  
-还有一种情况则是docker配置文件出错按照提示查看报错，并找到相应位置进行更改：1systemctl status docker.service
-或1journalctl -xn
-对于初学者且很难找到报错位置并改正的同学，推荐一个快速的方法—重装大法
-          ...
+          <h1 id="docker使用遇到的一些问题"><a href="#docker使用遇到的一些问题" class="headerlink" title="docker使用遇到的一些问题"></a>docker使用遇到的一些问题</h1><h2 id="docker报错：Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host"><a href="#docker报错：Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host" class="headerlink" title="docker报错：Cannot connect to the Docker daemon. Is the docker daemon running on this host?"></a>docker报错：Cannot connect to the Docker daemon. Is the docker daemon running on this host?</h2>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Linux服务器所见所闻/#更多" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/Linux服务器所见所闻/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -422,6 +428,9 @@ service docker restart
 
     
 
+    
+      
+    
     
 
     
@@ -480,9 +489,8 @@ service docker restart
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/关于IOS下click事件委托失效的解决方案/" itemprop="url">
-                  关于IOS下click事件委托失效的解决方案
-                </a>
+                
+                <a href="/关于IOS下click事件委托失效的解决方案/" class="post-title-link" itemprop="url">关于IOS下click事件委托失效的解决方案</a>
               
             
           </h2>
@@ -511,26 +519,32 @@ service docker restart
             
 
             
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-19 15:00:25" itemprop="dateModified" datetime="2019-05-19T15:00:25+08:00">2019-05-19</time>
+              
+            
           </span>
 
           
 
           
             
+            
           
 
           
-          
-             <span id="/关于IOS下click事件委托失效的解决方案/" class="leancloud_visitors" data-flag-title="关于IOS下click事件委托失效的解决方案">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -553,18 +567,15 @@ service docker restart
 
       
         
-          
-          由于某些特殊情况下，需要用到事件委托，比如给动态创建的DOM绑定click事件，这里就需要事件委托(这里就牵扯到：目标元素和代理元素)目标元素：动态创建的元素，最终click事件需要绑定到该元素代理元素：动态创建的元素的父级元素，或者document,body等。
-BUG情况当使用事件委托给【目标元素】添加 click 事件时，如果【代理元素】是 document或body，并且【目标元素】是默认不可点击的（如 div, span 等），此时click事件会失效。如果【目标元素】是可点击的（比如 button、a 标签），此时click事件还是有效的。
-解决方案3种
-【代理元素】可以是【目标元
-          ...
+          <h2 id="由于某些特殊情况下，需要用到事件委托，比如给动态创建的DOM绑定click事件，这里就需要事件委托-这里就牵扯到：目标元素和代理元素"><a href="#由于某些特殊情况下，需要用到事件委托，比如给动态创建的DOM绑定click事件，这里就需要事件委托-这里就牵扯到：目标元素和代理元素" class="headerlink" title="由于某些特殊情况下，需要用到事件委托，比如给动态创建的DOM绑定click事件，这里就需要事件委托(这里就牵扯到：目标元素和代理元素)"></a>由于某些特殊情况下，需要用到事件委托，比如给动态创建的DOM绑定click事件，这里就需要事件委托(这里就牵扯到：目标元素和代理元素)</h2><p>目标元素：动态创建的元素，最终click事件需要绑定到该元素<br>代理元素：动态创建的元素的父级元素，或者document,body等。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/关于IOS下click事件委托失效的解决方案/#更多" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/关于IOS下click事件委托失效的解决方案/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -578,6 +589,9 @@ BUG情况当使用事件委托给【目标元素】添加 click 事件时，如�
 
     
 
+    
+      
+    
     
 
     
@@ -636,9 +650,8 @@ BUG情况当使用事件委托给【目标元素】添加 click 事件时，如�
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/如何判断用户浏览器以及一些前端常用的正则表单验证/" itemprop="url">
-                  如何判断用户浏览器以及一些前端常用的正则表单验证
-                </a>
+                
+                <a href="/如何判断用户浏览器以及一些前端常用的正则表单验证/" class="post-title-link" itemprop="url">如何判断用户浏览器以及一些前端常用的正则表单验证</a>
               
             
           </h2>
@@ -667,26 +680,32 @@ BUG情况当使用事件委托给【目标元素】添加 click 事件时，如�
             
 
             
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-19 15:05:08" itemprop="dateModified" datetime="2019-05-19T15:05:08+08:00">2019-05-19</time>
+              
+            
           </span>
 
           
 
           
             
+            
           
 
           
-          
-             <span id="/如何判断用户浏览器以及一些前端常用的正则表单验证/" class="leancloud_visitors" data-flag-title="如何判断用户浏览器以及一些前端常用的正则表单验证">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -709,18 +728,15 @@ BUG情况当使用事件委托给【目标元素】添加 click 事件时，如�
 
       
         
-          
-          前言在我们做用户授权登录(微信,qq授权)，以及根据对应浏览器做对应的操作的时候，经常会遇到需要判断用户使用的浏览器的需求，以及在需要用户输入信息的时候，有需要验证的一些正则。希望大家看完本文可以有所收获。
-
-判断用户浏览器navigator.userAgent判断用户所使用的浏览器主要用到的api是navigator.userAgent，这是一个只读的字符串，声明了浏览器用于 HTTP 请求的用户代理头的值，不同浏览器的userAgent值都不相同，所以我们可以根据这个字符串来判断用户是从哪个浏览器进入的。
-判断方式：下面两个是刚做的demo获取的值，仔细观察下面两个字符串，会发现有些值是不
-          ...
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在我们做用户授权登录(微信,qq授权)，以及根据对应浏览器做对应的操作的时候，经常会遇到需要判断用户使用的浏览器的需求，以及在需要用户输入信息的时候，有需要验证的一些正则。希望大家看完本文可以有所收获。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/如何判断用户浏览器以及一些前端常用的正则表单验证/#更多" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/如何判断用户浏览器以及一些前端常用的正则表单验证/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -734,6 +750,9 @@ BUG情况当使用事件委托给【目标元素】添加 click 事件时，如�
 
     
 
+    
+      
+    
     
 
     
@@ -792,9 +811,8 @@ BUG情况当使用事件委托给【目标元素】添加 click 事件时，如�
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/git/" itemprop="url">
-                  git
-                </a>
+                
+                <a href="/git/" class="post-title-link" itemprop="url">git</a>
               
             
           </h2>
@@ -823,6 +841,22 @@ BUG情况当使用事件委托给【目标元素】添加 click 事件时，如�
             
 
             
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-19 15:00:55" itemprop="dateModified" datetime="2019-05-19T15:00:55+08:00">2019-05-19</time>
+              
+            
           </span>
 
           
@@ -847,20 +881,10 @@ BUG情况当使用事件委托给【目标元素】添加 click 事件时，如�
 
           
             
+            
           
 
           
-          
-             <span id="/git/" class="leancloud_visitors" data-flag-title="git">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -883,59 +907,17 @@ BUG情况当使用事件委托给【目标元素】添加 click 事件时，如�
 
       
         
-          
-          优秀的人，不是不合群，而是他们合群的人里面没有你
+          <blockquote class="blockquote-center">优秀的人，不是不合群，而是他们合群的人里面没有你</blockquote>
 
-
-git 命令行
-目录
-本地库
-
-远程仓库
-
-分支管理
-3.1 创建与合并分支
-3.2 解决冲突
-
-标签管理
-4.1 创建标签
-4.2 操作标签
-
-
-
-本地库
-初始化一个 Git 版本库
-
-git init
-
-查看 Git 版本库状态
-
-git status
-
-查看被改动文件的详细信息
-
-git diff &lt;fileName&gt;
-
-将文件加入缓存区
-
-git add &lt;fileName&gt;
-
-提交到版本库
-
-git commit -m &apos;message&apos;
-
-查看版本库操作日志
-
-git log
-
-格式显
-          ...
+<p><img src="/upload_image/image.jpg" alt=""></p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/git/#更多" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/git/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -949,6 +931,9 @@ git log
 
     
 
+    
+      
+    
     
 
     
@@ -994,21 +979,20 @@ git log
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="/upload_image/avatar.jpg" alt="onlyep">
             
               <p class="site-author-name" itemprop="name">onlyep</p>
-              <p class="site-description motion-element" itemprop="description">前端开发工作，三年工作经验，喜欢游戏、跑步健身、游泳，热爱前端开发工作，渴望找一个前端的妹子</p>
+              <div class="site-description motion-element" itemprop="description">前端开发工作，三年工作经验，喜欢游戏、跑步健身、游泳，热爱前端开发工作，渴望找一个前端的妹子</div>
           </div>
 
           
@@ -1061,6 +1045,7 @@ git log
           
 
           
+
           
 
           
@@ -1072,7 +1057,7 @@ git log
           
 
         </div>
-      </section>
+      </div>
 
       
 
@@ -1080,6 +1065,7 @@ git log
 
     </div>
   </aside>
+  
 
 
         
@@ -1088,10 +1074,7 @@ git log
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">
-
-&copy; 
-<span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -1103,10 +1086,6 @@ git log
 </div>
 
 
-  
-
-
-
 
 
 
@@ -1115,6 +1094,32 @@ git log
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
 
 
 
@@ -1136,11 +1141,14 @@ git log
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -1172,170 +1180,52 @@ git log
 
 
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+  <script src="/js/utils.js?v=7.1.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+  <script src="/js/motion.js?v=7.1.1"></script>
 
 
 
   
   
 
-  
 
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
-
-
-
-  
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
 
 
 
   
 
   
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("Tcnzdu7WLdG695c4hfmKGOHI-gzGzoHsz", "L84UVKMzELpotW9kByp0AIGF");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
 
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+  <script src="/js/next-boot.js?v=7.1.1"></script>
 
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
 
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
+  
 
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
+  
 
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
+  
 
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            
-            counter.save(null, {
-              success: function(counter) {
-                
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
-                
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
-            
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
+  
 
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
+
+
+  
+
 
 
 
@@ -1346,6 +1236,15 @@ git log
   
 
   
+
+  
+
+  
+
+  
+
+  
+
   
 
   
